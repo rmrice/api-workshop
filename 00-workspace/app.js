@@ -32,7 +32,7 @@ var app = {
       var el = e.target;
       var val = el.value;
       app.queryAutocomplete(val, function(err, data){
-      	console.log(data;
+      	console.log(data);
       }
     },
   
