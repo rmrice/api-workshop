@@ -35,3 +35,5 @@ var app = {
       console.log(val);
     }
 };
+
+$('#search-from-input').on('keyup', {input:'from'}, app.typeAhead);
