@@ -42,6 +42,8 @@ var app = {
           	if(data.features) app.options = data.features;
           	app.renderResultsList();
       	})
+      } else {
+      	app.clearList();
       }
     },
   
@@ -78,17 +80,24 @@ var app = {
         }
     },
       
-      selectItem: function(feature){
+    selectItem: function(feature){
       	app.selection[app.activeSearch] = feature;
         var elId = '#search-' + app.activeSearch + '-input';
         $(elId).val(feature.properties.label);
         app.clearList();
-      },
+    },
         
-      clearList: function(){
+    clearList: function(){
       	app.options = [];
         app.renderResultsList();
-      }
+    },
+  
+  	clearSearch: function(){
+    	var elId = '#search-' + e.data.input + '-input';
+      	$(elId).val('').trigger('keyup');
+      	app.selection[e.data.input] = {};
+    }
 };
 
 $('#search-from-input').on('keyup', {input:'from'}, app.typeAhead);
+$('#clear-from-search').on('click', {input:'from'}, app.clearSearch);
