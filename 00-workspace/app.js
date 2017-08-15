@@ -92,7 +92,7 @@ var app = {
         app.renderResultsList();
     },
   
-  	clearSearch: function(){
+  	clearSearch: function(e){
     	var elId = '#search-' + e.data.input + '-input';
       	$(elId).val('').trigger('keyup');
       	app.selection[e.data.input] = {};
