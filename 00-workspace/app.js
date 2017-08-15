@@ -31,7 +31,7 @@ var app = {
   	selection: {
     	from: {},
       	to: {}
-    }
+    },
 
     typeAhead: function(e){
       var el = e.target;
